@@ -1,0 +1,60 @@
+<?php
+/**
+ * création de la classe Router 
+ * dont la méthode principale analyse la requête entrante pour déterminer l'action à entreprendre 
+ */
+require_once 'home_control.php';
+require_once 'post_control.php';
+require_once 'view/view.php';
+
+class Router {
+	private $homeControl;
+	private $postControl;
+
+	public function __construct() {
+		$this->homeControl = new Home_control();
+		$this->postControl = new Post_control();		
+	}
+
+	public function routeQuery() {
+		try {
+			if (isset($_GET['action'])) {
+				if ($_GET['action'] == 'post') {
+					$postId = intval($this->getParam($_GET, 'id'));
+					if ($postId != 0) {
+						$this->postControl->post($postId);
+					} else 
+						throw new Exception ('Le numéro du billet est incorrect.');
+				} 
+				elseif ($_GET['action'] == "toComment") {
+					$author = $this->getParam($_POST, 'author');
+					$comment = $this->getParam($_POST, 'comment');
+					$post_id = $this->getParam($_POST, 'id');
+
+					$this->postControl->toComment($author, $comment, $post_id);
+				} else 
+				throw New Exception ('Action non valide');
+			}
+			else {
+				$this->homeControl->home();
+			}
+			
+		} 
+		catch (Exception $e) {
+			$this->error($e->getMessage());
+		}
+	}
+
+	private function error($errorMessage) {
+		$view = new View("_error");
+		$view->generate(array(
+			'errorMessage' => $errorMessage));
+	}
+
+	private function getParam($array, $name) {
+		if (isset($array[$name])) {
+			return $array[$name];
+		} else 
+		throw new Exception ('Le paramètre ' . $name . ' est absent.');
+	}
+}
