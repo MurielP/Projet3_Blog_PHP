@@ -1,6 +1,6 @@
 <?php
 /**
- * classe Database qui génère la connexion à la base de données avec une instance pdo
+ * classe abstraite Database qui génère la connexion à la base de données avec une instance pdo
  */
 abstract class Database 
 { 
