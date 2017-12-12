@@ -3,7 +3,7 @@
 require_once 'controller/router.php';
 
 /** 
- * création du routeur 
+ * création du routeur et appelle de la méthode routeQuery()
  * @var router 
  */
 $router = new router();
