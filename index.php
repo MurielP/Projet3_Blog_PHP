@@ -9,4 +9,5 @@ require_once 'controller/router.php';
 $router = new router();
 $router->routeQuery();
 
-// ajout du mot salut 
+// ajout du mot salut encore
+// 
