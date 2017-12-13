@@ -9,4 +9,4 @@ require_once 'controller/router.php';
 $router = new router();
 $router->routeQuery();
 
-// ajout 
+// ajout du mot 
