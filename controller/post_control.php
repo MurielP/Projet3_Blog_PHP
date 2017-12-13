@@ -19,7 +19,8 @@ class Post_control
 		$post = $this->post->getPost($postId);
 		$comments = $this->comment->getComments($postId);
 		$view = new View("_post");
-		$view->generate(array(
+		$view ->setTitle('Épisode');
+		$view ->generate(array(
 			'post' => $post,
 			'comments' => $comments));
 	}

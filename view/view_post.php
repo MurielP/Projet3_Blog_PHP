@@ -1,7 +1,8 @@
 <article>
     <header>
+    	<a href="index.php">Retour à la liste des articles</a>
         <h1><?= htmlspecialchars($post['title']) ?></h1>
-         <time><?= $post['creation_date'] ?></time>
+         <time>Posté le : <?= $post['creation_date'] ?></time>
        
     </header>
     <p><?= htmlspecialchars($post['content']) ?></p>

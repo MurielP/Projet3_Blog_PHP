@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"  />
-    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="public/style.css" />
     <title><?= $title ?></title>
   </head>
 
@@ -10,14 +10,14 @@
         <div id="global">
             <header>
                 <h1>Blog pour un écrivain</h1>
-                <a href="index.php">Retour à la liste des billets</a>
+                
             </header>
         <div>
             <?= $content ?>     
         </div> <!--contenu-->
 
         <footer>
-    	  <p>Ce blog est réalisé en PHP, HTML 5 et CSS 3.</p>
+    	  <a href="#">Mentions Légales</a>
     	</footer>
     </div>
     </body>

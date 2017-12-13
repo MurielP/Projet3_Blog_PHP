@@ -1,0 +1,13 @@
+ html, body {
+   	height: 100%;
+   }
+
+   body{
+   	color :  #2F4F4F;
+   	background: #D3D3D3;
+   	font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+   }
+
+   a {
+   	color : #00008B;
+   }
