@@ -1,5 +1,6 @@
 <article>
     <header>
+    	<a href="index.php">Retour à la liste des billets</a>
         <h1><?= htmlspecialchars($post['title']) ?></h1>
          <time><?= $post['creation_date'] ?></time>
        
