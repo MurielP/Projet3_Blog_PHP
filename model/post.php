@@ -1,11 +1,15 @@
 <?php 
 require_once 'connection.php';
 
+/** 
+ * class Post qui gère les requêtes des billets 
+ */
 class Post extends Database 
 {
 
 /**
- * @return liste des billets
+ * getPosts retourne toute la liste des billets
+ * @return l'intégralité des billets
  */
 	public function getPosts() 
 	{
@@ -15,6 +19,11 @@ class Post extends Database
 		return $posts;
 	}
 
+/**
+ * getPost  affiche un billet sélectionné selon son Id
+ * @param  [int] $postId est l'Id du billet
+ * @return le billet sélectionné en fonction de son Id
+ */
 	public function getPost($postId) 
 	{
 		$sql = ('SELECT id, author, title, content, date_FORMAT (creation_date, \'%d %m %Y à %Hh%imin%ss\') AS creation_date FROM posts WHERE id = ?');
