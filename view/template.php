@@ -10,7 +10,6 @@
         <div id="global">
             <header>
                 <h1>Blog pour un écrivain</h1>
-                <a href="index.php">Retour à la liste des billets</a>
             </header>
         <div>
             <?= $content ?>     
