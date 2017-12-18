@@ -2,6 +2,9 @@
  require_once 'model/user.php';
  require_once 'view/view.php';
 
+/**
+ * class User_control 
+ */
 class User_control
 {
 	private $id;
