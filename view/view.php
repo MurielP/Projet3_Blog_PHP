@@ -18,12 +18,12 @@ class View
 	}
 
 /**
+ * permet de générer le titre de l'onglet
  * @param $title 
  */
 	public function setTitle($title) 
 	{
 		$this->title = $title;
-
 	}
 
 /**
