@@ -13,13 +13,13 @@ class Home_control
 	}
 
 /**
- * fonction home qui affiche tous les billets 
+ * fonction home qui affiche tous les billets sur la page d'accueil
  */
 	public function home() 
 	{
 		$posts = $this->post->getPosts();
 		$view = new View("_home");
-		$view ->setTitle('Billet simple pour l\'Alaska');
+		$view ->setTitle('Accueil - Jean Forteroche');
 		$view ->generate(array('posts' => $posts));
 		
 	}
