@@ -2,7 +2,10 @@
 	
 	<article>
 		<header>
+			
+			<a href="index.php?action=registerUser">Se connecter</a>
 			<a href="index.php?action=post&id=<?php echo $post['id']; ?>">
+
 			<h1><?= htmlspecialchars($post['title']) ?></h1></a>
 			De : <?= htmlspecialchars($post['author']) ?><br />
 			Le <time><?= $post['creation_date'] ?></time>
