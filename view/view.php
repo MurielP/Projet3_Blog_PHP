@@ -1,3 +1,4 @@
+
 <?php
 /**
  * création de la classe View qui génère les instructions données aux différentes vues
