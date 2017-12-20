@@ -46,12 +46,16 @@ class Router {
 				} 
 				///	
 				elseif ($_GET['action'] == 'registerUser'){
+// pourquoi je dois faire une vérification alors que le getParam le vérifie déjà ????
+// manque l'action pour diriger vers le formulaire ?
+					if(!empty($_POST['pseudo']) AND !empty($_POST['pass']) and !empty($_POST['mail'])) {
 					$username = $this->getParam($_POST, 'username');
 					$pass = $this->getParam($_POST, 'pass');
 					$mail = $this->getParam($_POST, 'mail');
 
 					$this->userControl->registerUser($username, $pass, $mail);
-				
+					} else 
+					throw new Exception ('Vous ne pouvez pas vous enregistrer.');
 				////
 				}
 				else 

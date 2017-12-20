@@ -13,6 +13,26 @@ class User_control
 	private $mail;
 	private $inscription_date;
 
+	public function __construct() 
+	{
+		$this->user = new User();
+	}
+/**
+ * méthode hydrate
+ * récupère le nom du setter qui correspond à l'attribut 
+ * esi le setter existe on l'appelle 
+ 
+public function hydrate(array $data) 
+{
+	foreach ($data as $key => $value)
+	{
+		$method='set'.ucfirst($key);
+	}
+	if (method_exists($this, $method)) {
+		$this->$method($value);
+	}
+} */
+
 
 /**
  * liste les getters 
@@ -37,6 +57,8 @@ class User_control
 	{
 		if (is_string($username) AND strlen($username) <= 50) {
 			$this->username = $username;
+		} else {
+			echo 'Le pseudonyme saisi est incorrect';
 		}
 	}
 /**
@@ -72,8 +94,11 @@ class User_control
 /** [register enregistre nouveau user ] */
 	public function registerUser($username, $pass, $mail)
 	{
-		$this->user = new User();
+	
 		$this->registerUser->addUser($username, $pass, $mail);
+		$view = new View("_user");
+		$view ->setTitle('S\'inscrire');
+		$view->generate(array('user' => $user));
 	}
 
 }
